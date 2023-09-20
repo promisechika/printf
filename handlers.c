@@ -16,7 +16,7 @@ int handle_write_char(char c, char buffer[],
 	int flags, int width, int precision, int size)
 { /* char is stored at left and paddind at buffer's right */
 	int i = 0;
-	char padd = ' ';
+	char padd = ' '; /* padd is equal to space */
 
 	UNUSED(precision);
 	UNUSED(size);
@@ -105,7 +105,7 @@ int write_num(int ind, char buffer[],
 		padd = ' ';
 	while (prec > length)
 		buffer[--ind] = '0', length++;
-	if (extra_c != 0)
+	if (extra_c != 0) /* extra_c is not 0 */
 		length++;
 	if (width > length)
 	{
