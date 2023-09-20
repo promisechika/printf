@@ -11,13 +11,13 @@ int _printf(const char *format, ...)
 {
 	int i, printed = 0, printed_chars = 0;
 	int flags, width, precision, size, buff_ind = 0;
-	va_list list;
+	va_list list; /* declaration of va */
 	char buffer[BUFF_SIZE];
 
-	if (format == NULL)
+	if (format == NULL) /* equalizing format to null */
 		return (-1);
 
-	va_start(list, format);
+	va_start(list, format); /* initializing va */
 
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
