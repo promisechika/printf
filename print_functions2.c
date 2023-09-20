@@ -35,7 +35,7 @@ int print_pointer(va_list types, char buffer[],
 	{
 		buffer[ind--] = map_to[num_addrs % 16];
 		num_addrs /= 16;
-		length++;
+		length++; /* length increment */
 	}
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
@@ -45,7 +45,7 @@ int print_pointer(va_list types, char buffer[],
 	else if (flags & F_SPACE)
 		extra_c = ' ', length++;
 
-	ind++;
+	ind++; /* i increment */
 
 	/*return (write(1, &buffer[i], BUFF_SIZE - i - 1));*/
 	return (write_pointer(buffer, ind, length,
