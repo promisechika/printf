@@ -26,7 +26,7 @@ int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
 		if (fmt[*ind] == fmt_types[i].fmt)
 			return (fmt_types[i].fn(list, buffer, flags, width, precision, size));
 
-	if (fmt_types[i].fmt == '\0')
+	if (fmt_types[i].fmt == '\0') /* format is equal to null bytes */
 	{
 		if (fmt[*ind] == '\0')
 			return (-1);
@@ -38,7 +38,7 @@ int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
 			--(*ind);
 			while (fmt[*ind] != ' ' && fmt[*ind] != '%')
 				--(*ind);
-			if (fmt[*ind] == ' ')
+			if (fmt[*ind] == ' ') /* space */
 				--(*ind);
 			return (1);
 		}
