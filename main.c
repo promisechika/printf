@@ -9,8 +9,8 @@
  */
 int main(void)
 {
-    int len;
-    int len2;
+    int len; /* length 1 */
+    int len2; /* length 2 */
     unsigned int ui;
     void *addr;
 
